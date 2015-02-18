@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.6
+
+
+defaultTasks 'build'
+
+ext
+{
+    camel_version = '2.14.1'
+}
+
+test
+{
+   useTestNG()
+}
+
+eclipse
+{
+	classpath
+	{
+	   downloadSources = true
+	   downloadJavadoc = true
+	   defaultOutputDir = file('build-eclipse')
+	}
+}
+
+repositories 
+{
+    mavenCentral()        
+}
+
+
+dependencies
+{
+    compile "org.apache.camel:camel-guice:${camel_version}"
+
+    //testCompile ('org.mockito:mockito-all:1.10.19',
+    //             'org.testng:testng:6.8.21')	          
+}

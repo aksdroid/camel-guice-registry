@@ -4,7 +4,6 @@
 ```java
 bind(ClassOrIterfaceName.class).annotatedWith(Binds.camelBind("bean_name")).to(ClassName.class)
 ```
-
 2. include RegistryModule when creating the injector
 
 3. annotate injected parameters with CamelBind
@@ -20,7 +19,6 @@ public class Example
    ....
 }
 ```
-
 4. in the java DSL
 ```java
 from("direct:test").beanRef("bean_name");

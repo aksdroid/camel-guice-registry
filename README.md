@@ -1,15 +1,13 @@
 # camel-guice-registry
 
-* bind your objects with CamelBind annotation in the Guice Module
-
+1. bind your objects with CamelBind annotation in the Guice Module
 ```java
 bind(ClassOrIterfaceName.class).annotatedWith(Binds.camelBind("bean_name")).to(ClassName.class)
 ```
 
-* include RegistryModule when creating the injector
+2. include RegistryModule when creating the injector
 
-* annotate injected parameters with CamelBind
-
+3. annotate injected parameters with CamelBind
 ```java
 public class Example
 { 
@@ -23,14 +21,9 @@ public class Example
 }
 ```
 
-* in the java DSL
-
+4. in the java DSL
 ```java
 from("direct:test").beanRef("bean_name");
-```
-
-or
-
-```java
+//or
 from("direct:test").bean("bean:bean_name");
 ```
